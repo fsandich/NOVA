@@ -1,0 +1,53 @@
+{
+  "_caso": "P-2610407: Custom Alert de Ping Gateway, 9 min, muy recurrente. Solo una línea de log (HTTP 500): no alcanza para confianza Alta.",
+  "now": "2026-10-01T22:00:00Z",
+  "responses": {
+    "detalle": {
+      "records": [
+        {
+          "display_id": "P-2610407",
+          "event.name": "BMC-036 - [AWS](PING-GATEWAY) Latencia p99 elevada Diurna",
+          "event.category": "CUSTOM_ALERT",
+          "event.status": "CLOSED",
+          "event.start": "2026-10-01T17:31:00.000000000Z",
+          "event.end": "2026-10-01T17:40:00.000000000Z",
+          "event.severity": "3",
+          "event.description": "La latencia p99 superó el umbral.\n\nBase de conocimiento: KB0012345\n\n**Dashboard**: https://demo.apps.dynatrace.com/ui/apps/dynatrace.dashboards/dashboard/abc-123",
+          "affected_entity_ids": ["SERVICE-0000000000000C02"],
+          "affected_entity_types": ["dt.entity.service"],
+          "affected_entity_names": ["ping-gateway"],
+          "related_entity_ids": ["KUBERNETES_CLUSTER-PR00000000000001"],
+          "dt.entity.kubernetes_cluster": ["KUBERNETES_CLUSTER-PR00000000000001"],
+          "k8s.cluster.name": ["eks-demo-prod"],
+          "k8s.namespace.name": ["app-ping"],
+          "k8s.workload.name": ["ping-gateway"],
+          "entity_tags": ["Ambiente:PROD"]
+        }
+      ]
+    },
+    "b2": {
+      "records": [
+        {"display_id": "P-2610407", "event.status": "CLOSED", "event.start": "2026-10-01T17:31:00.000000000Z", "event.end": "2026-10-01T17:40:00.000000000Z"},
+        {"display_id": "P-2610300", "event.status": "CLOSED", "event.start": "2026-10-01T12:05:00.000000000Z", "event.end": "2026-10-01T12:14:00.000000000Z"},
+        {"display_id": "P-2610200", "event.status": "CLOSED", "event.start": "2026-10-01T09:40:00.000000000Z", "event.end": "2026-10-01T09:51:00.000000000Z"},
+        {"display_id": "P-260919100", "event.status": "CLOSED", "event.start": "2026-09-30T15:02:00.000000000Z", "event.end": "2026-09-30T15:10:00.000000000Z"}
+      ]
+    },
+    "b3": {
+      "records": [
+        {"event.category": "CUSTOM_ALERT", "event.name": "BMC-036 - [AWS](PING-GATEWAY) Latencia p99 elevada Diurna", "problems": "4", "activos": "0", "primero": "2026-09-30T15:02:00.000000000Z", "ultimo": "2026-10-01T17:31:00.000000000Z", "fin_max": "2026-10-01T17:40:00.000000000Z", "min_con_problema": 37.0}
+      ]
+    },
+    "b4": {
+      "records": [
+        {"event.category": "ERROR", "event.name": "Failure rate increase", "problems": "4", "primero": "2026-10-01T16:32:00.000000000Z", "ultimo": "2026-10-01T18:05:00.000000000Z"}
+      ]
+    },
+    "b5": {"records": []},
+    "b6": {
+      "records": [
+        {"loglevel": "ERROR", "logger": "gateway", "patron": "HTTP 500 Internal Server Error upstream /api/accounts", "lineas": "1", "primero": "2026-10-01T17:33:10.000000000Z", "ultimo": "2026-10-01T17:33:10.000000000Z"}
+      ]
+    }
+  }
+}

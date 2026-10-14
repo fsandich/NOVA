@@ -1,0 +1,9 @@
+.venv
+.env
+.git
+config/clusters.yaml
+knowledge
+tests
+**/__pycache__
+.pytest_cache
+.ruff_cache

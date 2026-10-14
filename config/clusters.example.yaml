@@ -1,0 +1,8 @@
+# Copia este archivo a config/clusters.yaml (está en .gitignore) y pon los IDs reales.
+# Se usa cuando un problem trae varios dt.entity.kubernetes_cluster: se elige el del
+# ambiente del problem (tag Ambiente:<X> o dt.security_context).
+clusters:
+  eks-ejemplo-prod: KUBERNETES_CLUSTER-0000000000000001
+  eks-ejemplo-qa: KUBERNETES_CLUSTER-0000000000000002
+  eks-ejemplo-pre-prod: KUBERNETES_CLUSTER-0000000000000003
+  eks-ejemplo-dev: KUBERNETES_CLUSTER-0000000000000004

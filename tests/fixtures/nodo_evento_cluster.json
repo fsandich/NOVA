@@ -1,0 +1,60 @@
+{
+  "_caso": "P-260916953: CPU-request saturation on node en PROD, 24 problems RESOURCE_CONTENTION en la misma hora por rotación de nodos; sigue activo 3 días después.",
+  "now": "2026-09-29T22:08:00Z",
+  "responses": {
+    "detalle": {
+      "records": [
+        {
+          "display_id": "P-260916953",
+          "event.name": "CPU-request saturation on node",
+          "event.category": "RESOURCE_CONTENTION",
+          "event.status": "ACTIVE",
+          "event.start": "2026-09-26T09:20:00.000000000Z",
+          "event.severity": "2",
+          "event.description": "# CPU-request saturation on node\n\nAmbiente afectado: eks-demo-prod",
+          "affected_entity_ids": ["KUBERNETES_NODE-0000000000000E01"],
+          "affected_entity_types": ["dt.entity.kubernetes_node"],
+          "affected_entity_names": ["i-0abc123def4567890"],
+          "related_entity_ids": ["KUBERNETES_CLUSTER-PR00000000000001"],
+          "dt.entity.kubernetes_cluster": ["KUBERNETES_CLUSTER-PR00000000000001"],
+          "k8s.cluster.name": ["eks-demo-prod"],
+          "entity_tags": ["Ambiente:PROD"]
+        }
+      ]
+    },
+    "patron": {
+      "records": [
+        {"hora": "2026-09-26T09:00:00.000000000Z", "problems": "24", "ids": ["P-260916953", "P-260916954", "P-260916955"]},
+        {"hora": "2026-09-26T10:00:00.000000000Z", "problems": "2", "ids": ["P-260916990", "P-260916991"]},
+        {"hora": "2026-09-28T03:00:00.000000000Z", "problems": "4", "ids": ["P-260917500"]}
+      ]
+    },
+    "eventos": {
+      "records": [
+        {"dt.kubernetes.event.reason": "Evicted", "eventos": "227", "primero": "2026-09-26T09:11:00.000000000Z", "ultimo": "2026-09-26T09:58:00.000000000Z", "namespaces": ["app-backend", "dynatrace"]},
+        {"dt.kubernetes.event.reason": "InstanceTerminating", "eventos": "108", "primero": "2026-09-26T09:11:00.000000000Z", "ultimo": "2026-09-26T09:58:00.000000000Z", "namespaces": []},
+        {"dt.kubernetes.event.reason": "NodeNotReady", "eventos": "63", "primero": "2026-09-26T09:12:00.000000000Z", "ultimo": "2026-09-26T09:55:00.000000000Z", "namespaces": []},
+        {"dt.kubernetes.event.reason": "FailedGetResourceMetric", "eventos": "40", "primero": "2026-09-26T08:30:00.000000000Z", "ultimo": "2026-09-29T21:00:00.000000000Z", "namespaces": ["app-backend"]}
+      ]
+    },
+    "reinicios": {
+      "records": [
+        {"inicio": "2026-09-26T09:00:00.000000000Z", "k8s.namespace.name": "app-backend", "procesos": "30"},
+        {"inicio": "2026-09-26T09:00:00.000000000Z", "k8s.namespace.name": "dynatrace", "procesos": "12"},
+        {"inicio": "2026-09-28T14:00:00.000000000Z", "k8s.namespace.name": "app-backend", "procesos": "2"}
+      ]
+    },
+    "problems_a": {
+      "records": [
+        {"event.category": "ERROR", "event.name": "Pod eviction event", "problems": "6", "primero": "2026-09-26T09:11:00.000000000Z", "ultimo": "2026-09-26T09:20:00.000000000Z"},
+        {"event.category": "ERROR", "event.name": "Failure rate increase", "problems": "2", "primero": "2026-09-26T09:40:00.000000000Z", "ultimo": "2026-09-26T09:45:00.000000000Z"}
+      ]
+    },
+    "problems_b": {
+      "records": [
+        {"event.category": "ERROR", "event.name": "Pod eviction event", "problems": "9", "activos": "0", "primero": "2026-09-26T09:11:00.000000000Z", "ultimo": "2026-09-28T03:10:00.000000000Z"},
+        {"event.category": "SLOWDOWN", "event.name": "Response time degradation", "problems": "4", "activos": "1", "primero": "2026-09-26T09:50:00.000000000Z", "ultimo": "2026-09-29T20:00:00.000000000Z"}
+      ]
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "_caso": "P-2610334: Deployment stuck en QA, incidente continuo desde 30/09; el origen es un Backoff event previo. Los logs de DataPower son líneas sueltas y no deben ser la causa.",
+  "now": "2026-10-01T22:42:00Z",
+  "responses": {
+    "detalle": {
+      "records": [
+        {
+          "display_id": "P-2610334",
+          "event.id": "-3082313225680007953_1790864580000V2",
+          "event.name": "Deployment stuck",
+          "event.category": "ERROR",
+          "event.status": "CLOSED",
+          "event.start": "2026-10-01T14:23:00.000000000Z",
+          "event.end": "2026-10-01T17:41:00.000000000Z",
+          "event.severity": "3",
+          "event.description": "# Deployment stuck\n\nThe problem **affects 1 entity** overall.\n\n- Deployment is stuck and therefore is no longer progressing.",
+          "dt.davis.impact_level": ["Infrastructure"],
+          "affected_entity_ids": ["CLOUD_APPLICATION-0000000000000A01"],
+          "affected_entity_types": ["dt.entity.cloud_application"],
+          "affected_entity_names": ["investment-funds-deployment-qa"],
+          "related_entity_ids": ["CLOUD_APPLICATION_NAMESPACE-0000000000000B01", "KUBERNETES_CLUSTER-QA00000000000002"],
+          "dt.entity.kubernetes_cluster": ["KUBERNETES_CLUSTER-QA00000000000002"],
+          "k8s.cluster.name": ["eks-demo-qa"],
+          "k8s.namespace.name": ["app-backend"],
+          "k8s.workload.name": ["investment-funds-deployment-qa"],
+          "dt.entity.cloud_application": ["CLOUD_APPLICATION-0000000000000A01"],
+          "entity_tags": ["Ambiente:QA"],
+          "dt.security_context": ["QA"]
+        }
+      ]
+    },
+    "b2": {
+      "records": [
+        {"display_id": "P-2610456", "event.status": "ACTIVE", "event.start": "2026-10-01T17:40:00.000000000Z"},
+        {"display_id": "P-2610334", "event.status": "CLOSED", "event.start": "2026-10-01T14:23:00.000000000Z", "event.end": "2026-10-01T17:41:00.000000000Z"},
+        {"display_id": "P-2610210", "event.status": "CLOSED", "event.start": "2026-10-01T06:35:00.000000000Z", "event.end": "2026-10-01T14:25:00.000000000Z"},
+        {"display_id": "P-260919030", "event.status": "CLOSED", "event.start": "2026-09-30T22:22:00.000000000Z", "event.end": "2026-10-01T06:36:00.000000000Z"},
+        {"display_id": "P-260918962", "event.status": "CLOSED", "event.start": "2026-09-30T20:54:00.000000000Z", "event.end": "2026-09-30T22:21:00.000000000Z"}
+      ]
+    },
+    "b3": {
+      "records": [
+        {"event.category": "ERROR", "event.name": "Pod eviction event", "problems": "4", "activos": "0", "primero": "2026-09-28T14:14:00.000000000Z", "ultimo": "2026-09-30T22:09:00.000000000Z", "fin_max": "2026-09-30T22:20:00.000000000Z", "min_con_problema": 60.0},
+        {"event.category": "ERROR", "event.name": "Backoff event", "problems": "1", "activos": "1", "primero": "2026-09-30T20:43:00.000000000Z", "ultimo": "2026-09-30T20:43:00.000000000Z", "fin_max": "2026-10-01T22:42:00.000000000Z", "min_con_problema": 1559.0},
+        {"event.category": "ERROR", "event.name": "Container restarts", "problems": "2", "activos": "0", "primero": "2026-09-30T20:45:00.000000000Z", "ultimo": "2026-09-30T22:13:00.000000000Z", "fin_max": "2026-09-30T22:20:00.000000000Z", "min_con_problema": 30.0},
+        {"event.category": "ERROR", "event.name": "Deployment stuck", "problems": "5", "activos": "1", "primero": "2026-09-30T20:54:00.000000000Z", "ultimo": "2026-10-01T17:40:00.000000000Z", "fin_max": "2026-10-01T22:42:00.000000000Z", "min_con_problema": 1551.0},
+        {"event.category": "ERROR", "event.name": "Not all pods ready", "problems": "4", "activos": "1", "primero": "2026-09-30T21:11:00.000000000Z", "ultimo": "2026-10-01T18:07:00.000000000Z", "fin_max": "2026-10-01T22:42:00.000000000Z", "min_con_problema": 1500.0}
+      ]
+    },
+    "b4": {
+      "records": [
+        {"event.category": "RESOURCE_CONTENTION", "event.name": "Memory-request saturation on node", "problems": "5", "primero": "2026-10-01T14:23:00.000000000Z", "ultimo": "2026-10-01T14:24:00.000000000Z"},
+        {"event.category": "ERROR", "event.name": "Failure rate increase", "problems": "2", "primero": "2026-10-01T13:39:00.000000000Z", "ultimo": "2026-10-01T13:42:00.000000000Z"},
+        {"event.category": "CUSTOM_ALERT", "event.name": "BMC-036 - [AWS](PING-GATEWAY) Latencia p99 elevada Diurna", "problems": "1", "primero": "2026-10-01T14:18:00.000000000Z", "ultimo": "2026-10-01T14:18:00.000000000Z"},
+        {"event.category": "ERROR", "event.name": "Not all pods ready", "problems": "1", "primero": "2026-10-01T14:50:00.000000000Z", "ultimo": "2026-10-01T14:50:00.000000000Z"}
+      ]
+    },
+    "b5": {
+      "records": [
+        {"dt.kubernetes.event.reason": "BackOff", "eventos": "54", "primero": "2026-09-30T22:10:13.000000000Z", "ultimo": "2026-10-01T17:55:28.958000000Z"},
+        {"dt.kubernetes.event.reason": "Pulling", "eventos": "47", "primero": "2026-09-30T22:09:30.000000000Z", "ultimo": "2026-10-01T17:53:31.704000000Z"},
+        {"dt.kubernetes.event.reason": "Pulled", "eventos": "14", "primero": "2026-10-01T13:23:55.000000000Z", "ultimo": "2026-10-01T17:44:51.251000000Z"}
+      ]
+    },
+    "b6": {
+      "records": [
+        {"loglevel": "ERROR", "logger": "com.example.observability.LoggingServiceImpl", "patron": "Error occurred in method ProcessedMovementsController.getProcessedMovements - Error: Validation failed for argument at index 2", "lineas": "3", "primero": "2026-10-01T15:56:49.808547000Z", "ultimo": "2026-10-01T16:19:33.601030000Z"},
+        {"loglevel": "WARN", "logger": "com.example.investmentfunds.GlobalExceptionHandler", "patron": "Validation errors detected: {period.year=year must be at least 2000}", "lineas": "3", "primero": "2026-10-01T15:56:49.704253000Z", "ultimo": "2026-10-01T16:19:33.523203000Z"},
+        {"loglevel": "ERROR", "logger": "com.example.datapower.DatapowerIntegrationServiceImpl", "patron": "Error calling Datapower [Cliente_TransaccionesPendientes001]: Connection prematurely closed BEFORE response", "lineas": "1", "primero": "2026-10-01T15:03:46.255725000Z", "ultimo": "2026-10-01T15:03:46.255725000Z"},
+        {"loglevel": "ERROR", "logger": "com.example.investmentfunds.GlobalExceptionHandler", "patron": "Error processing request: 404 NOT_FOUND", "lineas": "1", "primero": "2026-10-01T14:51:40.786799000Z", "ultimo": "2026-10-01T14:51:40.786799000Z"}
+      ]
+    }
+  }
+}

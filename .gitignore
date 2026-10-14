@@ -1,0 +1,22 @@
+# Secretos y configuración del tenant (nunca al repositorio)
+.env
+config/clusters.yaml
+
+# Conocimiento corporativo: se sube a Foundry desde la máquina corporativa
+knowledge/*
+!knowledge/README.md
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Sistema
+.DS_Store

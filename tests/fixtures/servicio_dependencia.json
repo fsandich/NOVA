@@ -1,0 +1,66 @@
+{
+  "_caso": "P-2610405: Failure rate increase en PROD por DataPower con circuit breaker abierto (cientos de líneas). No hay origen previo en el workload.",
+  "now": "2026-10-01T22:49:00Z",
+  "responses": {
+    "detalle": {
+      "records": [
+        {
+          "display_id": "P-2610405",
+          "event.name": "Failure rate increase",
+          "event.category": "ERROR",
+          "event.status": "CLOSED",
+          "event.start": "2026-10-01T17:30:00.000000000Z",
+          "event.end": "2026-10-01T17:40:00.000000000Z",
+          "event.severity": "3",
+          "event.description": "# Failure rate increase\n\nA root-cause was detected:\n\n**Application Observability service, exchange**\n\n- The error rate increased to 92.71 %.\nEndpoint /exchange/rate has a failure rate increase.",
+          "dt.davis.impact_level": ["Services"],
+          "affected_entity_ids": ["SERVICE-0000000000000C01"],
+          "affected_entity_types": ["dt.entity.service"],
+          "affected_entity_names": ["exchange"],
+          "related_entity_ids": ["CLOUD_APPLICATION-0000000000000A02", "KUBERNETES_CLUSTER-PR00000000000001", "PROCESS_GROUP-0000000000000D01"],
+          "dt.entity.kubernetes_cluster": ["KUBERNETES_CLUSTER-PR00000000000001"],
+          "k8s.cluster.name": ["eks-demo-prod"],
+          "k8s.namespace.name": ["app-backend"],
+          "k8s.workload.name": ["exchange-deployment-prod"],
+          "dt.entity.process_group": ["PROCESS_GROUP-0000000000000D01"],
+          "dt.entity.cloud_application": ["CLOUD_APPLICATION-0000000000000A02"],
+          "entity_tags": ["Ambiente:PROD"],
+          "dt.security_context": ["PROD"]
+        }
+      ]
+    },
+    "b2": {
+      "records": [
+        {"display_id": "P-2610405", "event.status": "CLOSED", "event.start": "2026-10-01T17:30:00.000000000Z", "event.end": "2026-10-01T17:40:00.000000000Z"},
+        {"display_id": "P-2610130", "event.status": "CLOSED", "event.start": "2026-10-01T04:08:00.000000000Z", "event.end": "2026-10-01T05:00:00.000000000Z"},
+        {"display_id": "P-260918662", "event.status": "CLOSED", "event.start": "2026-09-30T04:06:00.000000000Z", "event.end": "2026-09-30T04:56:00.000000000Z"},
+        {"display_id": "P-260917600", "event.status": "CLOSED", "event.start": "2026-09-28T04:11:00.000000000Z", "event.end": "2026-09-28T04:56:00.000000000Z"}
+      ]
+    },
+    "b3": {
+      "records": [
+        {"event.category": "SLOWDOWN", "event.name": "Mobile app slow user actions", "problems": "11", "activos": "0", "primero": "2026-09-25T19:57:00.000000000Z", "ultimo": "2026-10-01T04:08:00.000000000Z", "fin_max": "2026-10-01T04:40:00.000000000Z", "min_con_problema": 400.0},
+        {"event.category": "SLOWDOWN", "event.name": "Response time degradation", "problems": "1", "activos": "0", "primero": "2026-09-26T04:09:00.000000000Z", "ultimo": "2026-09-26T04:09:00.000000000Z", "fin_max": "2026-09-26T04:30:00.000000000Z", "min_con_problema": 21.0},
+        {"event.category": "ERROR", "event.name": "Pod eviction event", "problems": "1", "activos": "0", "primero": "2026-09-26T09:32:00.000000000Z", "ultimo": "2026-09-26T09:32:00.000000000Z", "fin_max": "2026-09-26T09:40:00.000000000Z", "min_con_problema": 8.0},
+        {"event.category": "ERROR", "event.name": "Failure rate increase", "problems": "4", "activos": "0", "primero": "2026-09-28T04:11:00.000000000Z", "ultimo": "2026-10-01T17:30:00.000000000Z", "fin_max": "2026-10-01T17:40:00.000000000Z", "min_con_problema": 157.0},
+        {"event.category": "ERROR", "event.name": "Multiple application problems", "problems": "1", "activos": "0", "primero": "2026-09-30T04:05:00.000000000Z", "ultimo": "2026-09-30T04:05:00.000000000Z", "fin_max": "2026-09-30T04:50:00.000000000Z", "min_con_problema": 45.0}
+      ]
+    },
+    "b4": {
+      "records": [
+        {"event.category": "SLOWDOWN", "event.name": "Response time degradation", "problems": "5", "primero": "2026-10-01T17:30:00.000000000Z", "ultimo": "2026-10-01T17:30:00.000000000Z"},
+        {"event.category": "ERROR", "event.name": "Failure rate increase", "problems": "4", "primero": "2026-10-01T16:32:00.000000000Z", "ultimo": "2026-10-01T18:05:00.000000000Z"},
+        {"event.category": "CUSTOM_ALERT", "event.name": "BMC-036 - [AWS](PING-GATEWAY) Failure rate elevado", "problems": "1", "primero": "2026-10-01T17:33:00.000000000Z", "ultimo": "2026-10-01T17:33:00.000000000Z"}
+      ]
+    },
+    "b5": {"records": []},
+    "b6": {
+      "records": [
+        {"loglevel": "ERROR", "logger": "com.example.observability.LoggingServiceImpl", "patron": "[OBSERVABILITY] Error occurred in method ExchangeTypesController.getExchangeCurrency - Error: Error retrieving data from datapower", "lineas": "661", "primero": "2026-10-01T17:28:01.701608000Z", "ultimo": "2026-10-01T17:34:48.988092000Z"},
+        {"loglevel": "ERROR", "logger": "reactor.core.publisher.Operators", "patron": "Operator called default onErrorDropped", "lineas": "581", "primero": "2026-10-01T17:28:15.048317000Z", "ultimo": "2026-10-01T17:34:50.493913000Z"},
+        {"loglevel": "ERROR", "logger": "com.example.exchangetypes.GlobalExceptionHandler", "patron": "[RESILIENCE] DataPower service 01234 temporarily unavailable: CircuitBreaker '01234_XX' is HALF_OPEN and does not permit further calls", "lineas": "295", "primero": "2026-10-01T17:28:43.323602000Z", "ultimo": "2026-10-01T17:34:48.896265000Z"},
+        {"loglevel": "ERROR", "logger": "com.example.exchangetypes.GlobalExceptionHandler", "patron": "[RESILIENCE] DataPower service 01234 temporarily unavailable: Did not observe any item or terminal signal within 15000ms", "lineas": "106", "primero": "2026-10-01T17:28:01.686411000Z", "ultimo": "2026-10-01T17:34:23.553648000Z"}
+      ]
+    }
+  }
+}
